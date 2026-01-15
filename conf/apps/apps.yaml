@@ -1,0 +1,4 @@
+beacon:
+  module: beacon
+  class: Beacon
+  light: light.beacon

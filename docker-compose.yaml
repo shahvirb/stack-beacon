@@ -1,0 +1,19 @@
+name: stack-beacon_argon
+
+services:
+  appdaemon:
+    container_name: beacon
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    image: acockburn/appdaemon:dev 
+    restart: unless-stopped 
+    tty: true 
+    user: "1000:1000"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./conf:/conf
+    ports:
+      - 5050:5050
