@@ -11,9 +11,11 @@ services:
     restart: unless-stopped 
     tty: true 
     user: "1000:1000"
+    network_mode: "container:uptime-kuma"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
       - ./conf:/conf
-    ports:
-      - 5050:5050
+      - ${DOCKERDATADIR}/beacon/local:/.local
+      - ${DOCKERDATADIR}/beacon/cache:/.cache
+      - ./uptime-kuma-api:/uptime-kuma-api
