@@ -1,0 +1,7 @@
+beacon:
+  module: beacon
+  class: Beacon
+  light: light.beacon
+  uptimekuma_url: http://localhost:3001
+  username: admin
+  password: admin12345AA
